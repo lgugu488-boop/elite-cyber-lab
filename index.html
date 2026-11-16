@@ -187,7 +187,7 @@ try{
 if(!window.THREE||!Q||!THREE.EffectComposer||!THREE.UnrealBloomPass)throw 0;
 const mem=navigator.deviceMemory||4,cores=navigator.hardwareConcurrency||4;
 const tier=touch?0:(mem<4||cores<6?1:2),cap=[1.5,1.75,2][tier],bs=[.55,.85,1.05][tier];
-const mot=matchMedia('(prefers-reduced-motion:reduce)').matches?.3:1;
+const mot=matchMedia('(prefers-reduced-motion:reduce)').matches ? .3 : 1;
 let dpr=Math.min(devicePixelRatio||1,cap);
 const R=new THREE.WebGLRenderer({canvas:$('#gl'),antialias:false,powerPreference:'high-performance'});R.setClearColor(0,1);
 const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(45,1,.1,80);C.position.z=7;
